@@ -5,6 +5,7 @@ template: |
 
 exclude-contributors:
   - 'dependabot'
+change-template: '- $TITLE - [#$NUMBER]($URL)'
 categories:
   - title: 💎 Features & Enhancements
     labels:
