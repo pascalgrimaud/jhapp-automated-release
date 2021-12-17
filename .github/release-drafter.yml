@@ -3,13 +3,11 @@ template: |
 
   $CHANGES
 
-  ❤ Thanks to: $CONTRIBUTORS
-
 exclude-contributors:
   - 'dependabot'
   - 'dependabot[bot]'
   - 'github-actions[bot]'
-change-template: '- $TITLE - [#$NUMBER]($URL)'
+change-template: '- $TITLE - [#$NUMBER]($URL) by $AUTHOR'
 categories:
   - title: 💎 Features & Enhancements
     labels:
