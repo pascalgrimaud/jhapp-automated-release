@@ -1,4 +1,4 @@
-name: release
+name: Release
 on:
   push:
     tags:
@@ -49,3 +49,8 @@ jobs:
           upload_url: ${{ steps.release-drafter-final.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
           asset_name: jhipster.jar
           asset_path: ./target/*.jar
+          asset_content_type: application/java-archive
+          # upload_url: ${{ steps.create_release.outputs.upload_url }}
+          # asset_path: target/${{ needs.version.outputs.jar-name }}
+          # asset_name: ${{ needs.version.outputs.release-jar-name }}
+          # asset_content_type: application/java-archive
