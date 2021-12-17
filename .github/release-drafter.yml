@@ -9,6 +9,9 @@ exclude-contributors:
   - 'github-actions[bot]'
 change-template: '- $TITLE - [#$NUMBER]($URL) by @$AUTHOR'
 categories:
+  - title: ⭐ Important fixes and improvements
+    labels:
+      - 'theme: important'
   - title: 💎 Features & Enhancements
     labels:
       - 'area: enhancement :wrench:'
