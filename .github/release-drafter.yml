@@ -6,6 +6,7 @@ template: |
 exclude-contributors:
   - 'dependabot'
   - 'dependabot[bot]'
+  - 'github-actions'
   - 'github-actions[bot]'
 change-template: '- $TITLE - [#$NUMBER]($URL) by @$AUTHOR'
 categories:
