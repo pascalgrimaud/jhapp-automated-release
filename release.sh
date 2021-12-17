@@ -1,7 +1,7 @@
 #!/bin/bash
 
 GIT_MAIN_BRANCH='main'
-GIT_REMOTE='upstream'
+GIT_REMOTE='origin'
 
 show_syntax() {
   echo "You want to release a new version"
