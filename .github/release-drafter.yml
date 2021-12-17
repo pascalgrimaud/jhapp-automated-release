@@ -1,13 +1,13 @@
+exclude-contributors:
+  - Dependabot
+  - dependabot
+  - dependabot[bot]
+  - github-actions
+  - github-actions[bot]
 template: |
   ## Release Notes
 
   $CHANGES
-
-exclude-contributors:
-  - 'dependabot'
-  - 'dependabot[bot]'
-  - 'github-actions'
-  - 'github-actions[bot]'
 change-template: '- $TITLE - [#$NUMBER]($URL) by @$AUTHOR'
 categories:
   - title: ⭐ Important fixes and improvements
