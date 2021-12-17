@@ -7,7 +7,7 @@ exclude-contributors:
   - 'dependabot'
   - 'dependabot[bot]'
   - 'github-actions[bot]'
-change-template: '- $TITLE - [#$NUMBER]($URL) by $AUTHOR'
+change-template: '- $TITLE - [#$NUMBER]($URL) by @$AUTHOR'
 categories:
   - title: 💎 Features & Enhancements
     labels:
