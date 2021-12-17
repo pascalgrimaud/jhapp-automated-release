@@ -56,7 +56,7 @@ npm version "${releaseVersion}" --no-git-tag-version
 
 git add . && git commit -m "Release v${releaseVersion}"
 git tag -a v"${releaseVersion}" -m "Release v${releaseVersion}"
-git push $GIT_REMOTE "${releaseVersion}"
+git push $GIT_REMOTE v"${releaseVersion}"
 
 echo "*** Version: add SNAPSHOT"
 ./mvnw build-helper:parse-version versions:set \
