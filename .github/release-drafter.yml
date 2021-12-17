@@ -3,7 +3,7 @@ template: |
 
   $CHANGES
 
-  $CONTRIBUTORS
+  ❤ Thanks to: $CONTRIBUTORS
 
 exclude-contributors:
   - 'dependabot'
