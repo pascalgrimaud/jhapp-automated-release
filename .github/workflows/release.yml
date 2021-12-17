@@ -1,13 +1,8 @@
-name: Build
+name: Release
 on:
   push:
-    branches:
-      - main
     tags:
       - "v*"
-  pull_request:
-    branches:
-      - main
 jobs:
   #--------------------------------------------------
   # Build and Tests the project

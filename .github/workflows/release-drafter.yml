@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-
 jobs:
   update_release_draft:
     if: github.repository == 'pascalgrimaud/jhapp-automated-release'
