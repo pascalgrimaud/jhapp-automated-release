@@ -54,8 +54,8 @@ echo "*** Git: commit, tag and push tag..."
 releaseVersion=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout)
 npm version "${releaseVersion}" --no-git-tag-version
 
-git add . && git commit -m "Release ${releaseVersion}"
-git tag -a "${releaseVersion}" -m "Release ${releaseVersion}"
+git add . && git commit -m "Release v${releaseVersion}"
+git tag -a v"${releaseVersion}" -m "Release v${releaseVersion}"
 git push $GIT_REMOTE "${releaseVersion}"
 
 echo "*** Version: add SNAPSHOT"
@@ -66,5 +66,5 @@ echo "*** Version: add SNAPSHOT"
 echo "*** Git: commit, push to $GIT_MAIN_BRANCH..."
 nextVersion=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout)
 npm version "${nextVersion}" --no-git-tag-version
-git add . && git commit -m "Update to next version ${nextVersion}"
+git add . && git commit -m "Update to next version v${nextVersion}"
 git push $GIT_REMOTE $GIT_MAIN_BRANCH
