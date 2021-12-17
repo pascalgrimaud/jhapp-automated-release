@@ -52,16 +52,19 @@ fi
 
 echo "*** Git: commit, tag and push tag..."
 releaseVersion=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout)
+npm version "${releaseVersion}" --no-git-tag-version
+
 git add . && git commit -m "Release ${releaseVersion}"
-git tag -a ${releaseVersion} -m "Release ${releaseVersion}"
-git push origin ${releaseVersion}
+git tag -a "${releaseVersion}" -m "Release ${releaseVersion}"
+git push $GIT_REMOTE "${releaseVersion}"
 
 echo "*** Version: add SNAPSHOT"
 ./mvnw build-helper:parse-version versions:set \
   -DnewVersion=\${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.nextIncrementalVersion}-SNAPSHOT \
   versions:commit -q
 
-echo "*** Git: commit, push to master..."
+echo "*** Git: commit, push to $GIT_MAIN_BRANCH..."
 nextVersion=$(./mvnw help:evaluate -Dexpression=project.version -q -DforceStdout)
+npm version "${nextVersion}" --no-git-tag-version
 git add . && git commit -m "Update to next version ${nextVersion}"
-git push origin master
+git push $GIT_REMOTE $GIT_MAIN_BRANCH
