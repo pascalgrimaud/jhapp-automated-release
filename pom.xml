@@ -6,7 +6,7 @@
 
   <groupId>com.mycompany.myapp</groupId>
   <artifactId>jhipster</artifactId>
-  <version>0.1.3-SNAPSHOT</version>
+  <version>0.2.0</version>
   <name>jhipster</name>
   <description>JHipster Project</description>
   <packaging>jar</packaging>
