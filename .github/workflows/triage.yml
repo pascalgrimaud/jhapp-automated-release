@@ -29,7 +29,7 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const pull_request = { owner: context.pull_request.owner, repo: context.pull_request.repo, pull_request_number: context.pull_request.number }
+            const pull_request = { repo: context.pull_request.repo, pull_request_number: context.pull_request.number }
             github.rest.issues.listLabelsOnIssue({...pull_request}).then(response => {
               const labels = response.data
               let missingLabel = [], missingArea = true
