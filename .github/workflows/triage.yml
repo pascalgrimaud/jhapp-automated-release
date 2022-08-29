@@ -29,8 +29,8 @@ jobs:
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
-            const pull_request = { repo: context.pull_request.repo, pull_request_number: context.pull_request.number }
-            github.rest.issues.listLabelsOnIssue({...pull_request}).then(response => {
+            const pull = { owner: context.pull.owner, repo: context.pull.repo, pull_number: context.pull.number }
+            github.rest.pulls.listLabelsOnPull({...pull}).then(response => {
               const labels = response.data
               let missingLabel = [], missingArea = true
               for (const label of labels) {
@@ -40,8 +40,6 @@ jobs:
               }
               if (missingArea) {
                 missingLabel.push('area: triage')
-              }
-              if (missingArea) {
-                  github.rest.issues.addLabels({...pull_request, labels: missingLabel})
+                github.rest.pulls.addLabels({...pull, labels: missingLabel})
               }
             })
